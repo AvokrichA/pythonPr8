@@ -4,7 +4,7 @@ class MyException(Exception):
 
 try:
     a = float(input('Введите делимое:'))
-    b = float(input('Введите делитель: b = '))
+    b = float(input('Введите делитель:'))
     if b==0:
         raise MyException('На 0 делить нельзя!')
     else:
