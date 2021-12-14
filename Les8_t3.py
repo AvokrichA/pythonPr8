@@ -1,20 +1,19 @@
-class MyOwnErr(Exception):
-    def __init__(self, txt):
-        self.txt = txt
+class TypeError(Exception):
+    pass
 
+b=[]
 
-a = []
 while True:
-    b = input('Введите число (q - окончание ввода): ')
-    if b == 'q':
-        break
     try:
-        if not b.isdigit():
-            raise MyOwnErr('Вы ввели не число')
-        else:
-            a.append(b)
-            print(a)
-    except MyOwnErr as err:
-        print(err)
+        a = input('Введите число:')
+        if a=='stop':
+            break
 
-print(f'итоговый список: {a}')
+        if not a.isdigit():
+            raise TypeError('Введите числовое значение:')
+        b.append(int(a))
+
+    except TypeError as e:
+        print(e)
+
+print(b)
